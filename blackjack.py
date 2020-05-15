@@ -118,23 +118,23 @@ class Chips:
         print("\nPlayer's Hand:", *self.cards, sep='\n ')
         print("Player's Hand =", self.value)
 
-    def player_busts(self, dealer, chips):
+    def player_busts(self, _dealer, chips):
         print("Player busts!")
         chips.lose_bet()
 
-    def player_wins(player, dealer, chips):
+    def player_wins(player, _dealer, chips):
         print("Player wins!")
         chips.win_bet()
 
-    def dealer_busts(player, dealer, chips):
+    def dealer_busts(player, _dealer, chips):
         print("Dealer busts!")
         chips.win_bet()
 
-    def dealer_wins(player, dealer, chips):
+    def dealer_wins(player, _dealer, chips):
         print("Dealer wins!")
         chips.lose_bet()
 
-    def push(player, dealer):
+    def push(player, _dealer):
         print("Dealer and Player tie! It's a push.")
 
     while True:
