@@ -1,7 +1,8 @@
 import random
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
-ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+         'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8,
           'Nine': 9, 'Ten': 10, 'Jack': 11, 'Queen': 12, 'King': 13, 'Ace': 14}
 
@@ -41,28 +42,6 @@ class Deck:
 
 
 class Hand:
-    def __init__(self):
-        self.cards = []
-        self.value = 0
-        self.aces = 0
-
-    def add_card(self, card):
-        self.cards.append(card)
-        self.value += values[card.rank]
-
-    def adjust_for_ace(self):
-        pass
-
-
-test_deck = Deck()
-test_deck.shuffle()
-test_player = Hand()
-
-for card in test_player.cards:
-    print(card)
-
-
-class Hand:
 
     def __init__(self):
         self.cards = []
@@ -79,6 +58,14 @@ class Hand:
         while self.value > 21 and self.aces:
             self.value -= 10
             self.aces -= 1
+
+
+test_deck = Deck()
+test_deck.shuffle()
+test_player = Hand()
+
+for card in test_player.cards:
+    print(card)
 
 
 class Chips:
