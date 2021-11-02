@@ -10,7 +10,6 @@ playing = True
 
 
 class Card:
-
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
@@ -20,7 +19,6 @@ class Card:
 
 
 class Deck:
-
     def __init__(self):
         self.deck = []
         for suit in suits:
@@ -42,7 +40,6 @@ class Deck:
 
 
 class Hand:
-
     def __init__(self):
         self.cards = []
         self.value = 0
@@ -69,7 +66,6 @@ for card in test_player.cards:
 
 
 class Chips:
-
     def __init__(self):
         self.total = 100
         self.bet = 0
