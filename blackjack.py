@@ -3,7 +3,9 @@ import random
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
          'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
-values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7,         'Eight': 8, 'Nine': 9, 'Ten': 10, 'Jack': 11, 'Queen': 12, 'King':          13, 'Ace': 14}
+values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7,
+          'Eight': 8, 'Nine': 9, 'Ten': 10, 'Jack': 11, 'Queen': 12,
+          'King': 13, 'Ace': 14}
 
 playing = True
 
@@ -25,10 +27,10 @@ class Deck:
                 self.deck.append(Card(suit, rank))
 
     def __str__(self):
-        deck_comp = ''
+        deck_composition = ''
         for card in self.deck:
-            deck_comp += '\n ' + card.__str__()
-        return 'The deck has:' + deck_comp
+            deck_composition += '\n ' + card.__str__()
+        return 'The deck has:' + deck_composition
 
     def shuffle(self):
         random.shuffle(self.deck)
@@ -81,7 +83,7 @@ def take_bet(chips):
         try:
             chips.bet = int(input('How many chips would you like to bet? '))
         except ValueError:
-            print('Sorry, a bet must be an integer!')
+            print('Sorry, a bet must be an integer value!')
         else:
             if chips.bet > chips.total:
                 print("Sorry, your bet can't exceed", chips.total)
@@ -98,7 +100,9 @@ def hit_or_stand(deck, hand):
     global playing
 
     while True:
-        x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
+        x = input(
+            "Would you like to Hit or Stand? Enter 'h' for hit or 's' for stand? "
+        )
 
         if x[0].lower() == 'h':
             hit(deck, hand)
